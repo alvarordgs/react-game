@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button } from "./components/Button";
+import QuestionsModal from "./components/QuestionsModal";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="main-bg-color h-screen w-full">
+      <div className="flex flex-col gap-8 items-center justify-between p-6 h-full">
+        <header className="flex flex-col gap-5 items-center justify-center">
+          <span className="text-sm text-gray-100 font-semibold">
+            Álvaro, Iago, Jean e Marllon
+          </span>
+          <h1 className="text-4xl font-bold text-purple-300">JS Bests Practices Quiz</h1>
+        </header>
+        <main className="flex flex-col gap-6">
+          <Button buttonText="Novo jogo" className="text-purple-900 hover:bg-purple-200 hover:border-purple-200"/>
+          <Button buttonText="Sobre" className="text-purple-900 hover:bg-purple-200 hover:border-purple-200"/>
+        </main>
+        <footer className="flex flex-col justify-center items-center text-gray-200">
+          <h4>IFTM - CAUPT</h4>
+          <p>Análise e Desenvolvimento de Sistemas</p>
+          <p>Tecnologias e Interfaces para Aplicações Web</p>
+        </footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <QuestionsModal/>
+    </div>
+  );
 }
 
-export default App
+export default App;
